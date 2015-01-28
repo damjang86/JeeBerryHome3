@@ -1,36 +1,31 @@
 ﻿@model JeeBerryHome3.Models.RegisterModel
 @{
-    ViewBag.Title = "Register";
+    ViewBag.Title = "Registracija";
 }
 
 <hgroup class="title">
     <h1>@ViewBag.Title.</h1>
-    <h2>Create a new account.</h2>
+    <h2>Kreirajte novi korisnicki nalog.</h2>
 </hgroup>
-
-@using (Html.BeginForm()) {
-    @Html.AntiForgeryToken()
-    @Html.ValidationSummary()
 
     <fieldset>
         <legend>Registration Form</legend>
         <ol>
             <li>
-                @Html.LabelFor(m => m.UserName)
-                @Html.TextBoxFor(m => m.UserName)
+                <label>Korisnicko ime:</label>
+                <input id="korisnickoIme" autofocus />
             </li>
             <li>
-                @Html.LabelFor(m => m.Password)
-                @Html.PasswordFor(m => m.Password)
+                <label>Šifra:</label>
+                <input id="sifra" />
             </li>
             <li>
-                @Html.LabelFor(m => m.ConfirmPassword)
-                @Html.PasswordFor(m => m.ConfirmPassword)
+                <label>Potvrdi šifru:</label>
+                <input id="sifraPonovljena" />
             </li>
         </ol>
-        <input type="submit" value="Register" />
+        <button class="btn btn-default">Registruj me</button>
     </fieldset>
-}
 
 @section Scripts {
     @Scripts.Render("~/bundles/jqueryval")

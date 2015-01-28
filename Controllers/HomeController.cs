@@ -10,7 +10,7 @@ namespace JeeBerryHome3.Controllers
     {
         public ActionResult Index()
         {
-            ViewBag.Message = "Modify this template to jump-start your ASP.NET MVC application.";
+            ViewBag.Message = "";
 
             return View();
         }
@@ -18,7 +18,7 @@ namespace JeeBerryHome3.Controllers
         public ActionResult About()
         {
             ViewBag.Message = "Your app description page.";
-
+ 
             return View();
         }
 
@@ -27,6 +27,34 @@ namespace JeeBerryHome3.Controllers
             ViewBag.Message = "Your contact page.";
 
             return View();
+        }
+
+        public ActionResult UserProfile()
+        {
+            ViewBag.Message = "Your contact page.";
+
+            return View();
+        }
+
+        public ActionResult PreviousExams()
+        {
+            ViewBag.Message = "Your contact page.";
+            
+            return View();
+        }
+
+        
+        public ActionResult Messages()
+        {
+            ViewBag.Message = "Your contact page.";
+            return View();
+
+            
+        }
+        
+        String blah(String a, String h)
+        {
+            return "MH";
         }
     }
 }

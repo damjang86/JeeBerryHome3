@@ -1,0 +1,108 @@
+﻿@{
+    ViewBag.Title = "Messages";
+}
+<style>
+    .chat {
+    //width: 400px;
+    font-family: sans-serif;
+    font-size:small;
+}
+
+.bubble {
+    background-color: #F2F2F2;
+    border-radius: 5px;
+    box-shadow: 0 0 6px #B2B2B2;
+    display: inline-block;
+    padding: 10px 18px;
+    position: relative;
+    vertical-align: top;
+    width: 400px;
+}
+
+.tail {
+    /*box-sizing: border-box;
+    border:1px dotted red;*/
+    position: absolute;
+    top: 12px;
+    left: -18px;
+    height: 18px;
+    width:18px;
+    overflow:hidden;
+}
+.tail:before {
+    //box-sizing: border-box;
+    //border:1px dotted green;
+    background-color: #F2F2F2;
+    box-shadow: 0 0 6px #B2B2B2;
+    content: "\00a0";
+
+    display: block;
+    position: absolute;
+    top: 0px;
+    left: 12px;
+    height: 12px;
+    width:  12px;
+    -webkit-transform: skew( -45deg );
+    -moz-transform:    skew( -45deg );
+}
+
+.me {
+    float: right;   
+    margin: 5px 45px 5px 20px;         
+}
+
+.friend {
+    float: left;   
+    margin: 5px 45px 5px 20px;         
+}
+
+
+</style>
+
+<div class="row">
+    <div class="col-md-3">
+        <h2>Prijatelji:</h2>
+    </div>
+    <div class="col-md-1">
+    </div>
+    <div class="col-md-8">
+        <h1 id="curentSender">Pavle Djordjevic:</h1>
+    </div>
+</div>
+<br>
+<div class="row">
+    <div class="col-md-3" style="height:auto; max-height:300px; overflow-y:scroll; background-color:#D0CEE7; border-radius:10px">
+        <ul>
+            <li><a class="btn">Pavle Djordjevic</a></li>
+            <li><a class="btn">Milos Davitkovic</a></li>
+            <li><a class="btn">Petar Ljubic</a></li>
+            <li><a class="btn">Oranges</a></li>
+        </ul>
+    </div>
+    <div class="col-md-1">
+    </div>
+    <div class="col-md-8" style="height:auto; max-height:300px; overflow-y:scroll; background-color:#D0CEE7; border-radius:10px">      
+        <div class="chat">
+            <div class="bubble friend">
+                <span class='tail'>&nbsp;</span>
+                <p>The path of the righteous man is beset on all sides by the iniquities of the selfish and the tyranny of evil men. Blessed is he who, in the name of charity and good will, shepherds the weak through the valley of darkness, for he is truly his brother's keeper and the finder of lost children.</p><p>And I will strike down upon thee with great vengeance and furious anger those who would attempt to poison and destroy My brothers. And you will know My name is the Lord when I lay My vengeance upon thee.</p>
+            </div>
+            <div class="bubble me">
+                <p>The path of the righteous man is beset on all sides by the iniquities of the selfish and the tyranny of evil men. Blessed is he who, in the name of charity and good will, shepherds the weak through the valley of darkness, for he is truly his brother's keeper and the finder of lost children.</p><p>And I will strike down upon thee with great vengeance and furious anger those who would attempt to poison and destroy My brothers. And you will know My name is the Lord when I lay My vengeance upon thee.</p>
+            </div>
+            <div class="bubble friend">
+                <span class='tail'>&nbsp;</span>
+                <p>The path of the righteous man is beset on all sides by the iniquities of the selfish and the tyranny of evil men. Blessed is he who, in the name of charity and good will, shepherds the weak through the valley of darkness, for he is truly his brother's keeper and the finder of lost children.</p><p>And I will strike down upon thee with great vengeance and furious anger those who would attempt to poison and destroy My brothers. And you will know My name is the Lord when I lay My vengeance upon thee.</p>
+            </div>
+        </div>
+    </div>
+</div>
+<br>
+<div class="row">
+    <div class="col-md-4">
+    </div>
+    <div class="col-md-8" style="padding-right:0px; padding-left:0px">
+        <textarea class="form-control" id="msg"></textarea>
+        <button type="button" class="btn btn-success">Posalji</button>
+    </div>
+</div>
