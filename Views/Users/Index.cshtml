@@ -1,0 +1,166 @@
+﻿@{
+    ViewBag.Title = "Korisnici";
+}
+<style>
+    #KORISNICI_DIV img{
+        width: 128px;
+        height: 100px;
+    }
+     #KORISNICI_MODAL img{
+        width: 128px;
+        height: 100px;
+    }
+    #KORISNICI_DIV label{
+        display: inline;
+    }
+    #KORISNICI_DIV h5{
+        display: inline;
+        color: white;
+    }
+    .modal-body input
+    {
+        width: 150%;
+    }
+</style>
+
+<h2>Korisnici</h2>
+<br><br><br>
+<div id="KORISNICI_DIV">
+    <div class="row">
+        <div class="col-md-4">
+            <img src="~/Content/userImgs/damjan.jpg">
+            <br>
+            <label>Korisničko ime:</label>
+            <h5 class="brn btn-link" data-toggle="modal" data-target="#KORISNICI_MODAL" onclick="DetaljiKorisnika()">damjang86</h5>
+            <br>
+            <label>Puno ime:</label>
+            <h5>Damjan Gicic</h5>
+        </div>
+        <div class="col-md-4">
+            <img src="~/Content/userImgs/paja.jpg">
+            <br>
+            <label>Korisničko ime:</label>
+            <h5>pajagoogle92</h5>
+            <br>
+            <label>Puno ime:</label>
+            <h5>Pavle Djordjevic</h5>
+        </div>
+        <div class="col-md-4">
+            <img src="~/Content/userImgs/davitko.jpg" />
+            <br>
+            <label>Korisničko ime:</label>
+            <h5>davitkoMuzjak</h5>
+            <br>
+            <label>Puno ime:</label>
+            <h5>Davitkovic Milos</h5>
+        </div>
+    </div>
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="KORISNICI_MODAL" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                <h4 class="modal-title">Korisnik: </h4>
+            </div>
+            <div class="modal-body">
+                <div class="row">
+                    <div class="col-md-4">
+                        <img src="~/Content/userImgs/damjan.jpg">
+                    </div>
+                    <div class="col-md-6">
+                        <div class="row">
+                            <div class="col-md-5">
+                                <label style="margin-top:10px">Ime:</label>
+                            </div>
+                            <div class="col-md-6">
+                                <input id="IME" name="ime" placeholder="Vase ime" autofocus/>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-5">
+                                <label style="margin-top:10px">Prezime:</label>
+                            </div>
+                            <div class="col-md-6">
+                                <input id="PREZIME" id="prezime" placeholder="Vase prezime" />
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-5">
+                                <label style="margin-top:10px">Korisničko ime:</label>
+                            </div>
+                            <div class="col-md-6">
+                                <input id="KORISNICKO" name="korisnickoIme" placeholder="Vase korisnicko ime" />
+                            </div>
+                        </div> 
+                        
+                        <div class="row">
+                            <div class="col-md-5">
+                                <label style="margin-top:10px">Šifra</label>
+                            </div>
+                            <div class="col-md-6">
+                                <input id="SIFRA" name="sifra" placeholder="Vasa šifra" />
+                            </div>
+                        </div> 
+                        
+                        <div class="row">
+                            <div class="col-md-5">
+                                <label style="margin-top:10px">Ponovite šifru</label>
+                            </div>
+                            <div class="col-md-6">
+                                <input id="PONOVLJENA_SIFRA" name="ponovljenaSifra" placeholder="Ponovo unesite šifru" />
+                            </div>
+                        </div> 
+                        
+                        <div class="row">
+                            <div class="col-md-5">
+                                <label style="margin-top:10px">Vaša slika</label>
+                            </div>
+                            <div class="col-md-6">
+                                <input id="SLIKA" name="slika" type="file" />
+                            </div>
+                        </div> 
+                        
+                        <div class="row">
+                            <div class="col-md-5">
+
+                            </div>
+                            <div class="col-md-6">
+
+                            </div>
+                        </div>                                   
+                    </div>
+                    <div class="col-md-2">
+                    </div>
+                </div>
+            </div>            
+            <div class="modal-footer">
+                <button id="nazadModalBtn" type="button" class="btn btn-default" data-dismiss="modal" style="float:left">Nazad</button>
+                @if (true)
+                {
+                    <button id="doneButton" type="button" class="btn btn-primary" onclick="done()" style="float:right">Unesi</button>
+                }
+                else
+                {
+                    <button id="doneButton" style="display:none"></button>
+                }
+            </div>
+         </div>
+     </div>
+</div>
+
+@section Scripts
+{
+    <script type="text/javascript">
+        $(function()
+        {
+            $('#KORISNICI_DIV img').click(DetaljiKorisnika());
+        });
+        function DetaljiKorisnika()
+        {
+
+        }
+    </script>
+}
