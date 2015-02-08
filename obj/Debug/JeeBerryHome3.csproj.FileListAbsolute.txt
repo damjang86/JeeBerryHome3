@@ -78,3 +78,5 @@ c:\users\damjan\documents\visual studio 2013\Projects\JeeBerryHome3\JeeBerryHome
 c:\users\damjan\documents\visual studio 2013\Projects\JeeBerryHome3\JeeBerryHome3\obj\Debug\JeeBerryHome3.csprojResolveAssemblyReference.cache
 c:\users\damjan\documents\visual studio 2013\Projects\JeeBerryHome3\JeeBerryHome3\obj\Debug\JeeBerryHome3.dll
 c:\users\damjan\documents\visual studio 2013\Projects\JeeBerryHome3\JeeBerryHome3\obj\Debug\JeeBerryHome3.pdb
+C:\Users\Damjan\Documents\Visual Studio 2013\Projects\JeeBerryHome3\JeeBerryHome3\bin\Neo4jClient.dll
+C:\Users\Damjan\Documents\Visual Studio 2013\Projects\JeeBerryHome3\JeeBerryHome3\bin\Neo4jClient.pdb
