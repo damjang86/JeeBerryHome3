@@ -3,6 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using Neo4jClient;
+using Neo4jClient.Cypher;
+using JeeBerryHome3.Models;
 
 namespace JeeBerryHome3.Controllers
 {
@@ -21,6 +24,11 @@ namespace JeeBerryHome3.Controllers
             //sliku moras ovde, samo da ti prekopitam kod
             //sad mozes sve sem slike
 
+        }
+
+        public void SaveUserData(String ime, String prezime, String korisnickoIme, String sifra, String slikaUrl)
+        {
+            User
         }
     }
 }
