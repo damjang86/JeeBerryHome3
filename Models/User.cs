@@ -12,6 +12,7 @@ namespace JeeBerryHome3.Models
         public String Name { get; set; }
         public String Surname { get; set; }
         public String Password { get; set; }
-        public String Email { get; set; }
+        public bool Validated { get; set; }
+        public String Type { get; set; } //CLIENT, ADMIN
     }
 }
