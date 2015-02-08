@@ -16,5 +16,11 @@ namespace JeeBerryHome3.Controllers
             return View();
         }
 
+        public void GetUserData(String ime, String prezime /*itd*/)
+        {
+            //sliku moras ovde, samo da ti prekopitam kod
+            //sad mozes sve sem slike
+
+        }
     }
 }
