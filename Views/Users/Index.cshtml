@@ -1,5 +1,50 @@
 ﻿@{
     ViewBag.Title = "Korisnici";
+    List<String> korisnici = new List<String>();
+    korisnici.Add("damjan.jpg");
+    korisnici.Add("damjang86");
+    korisnici.Add("Damja");
+    korisnici.Add("Gicic");
+
+    korisnici.Add("paja.jpg");
+    korisnici.Add("paja92");
+    korisnici.Add("Pavle");
+    korisnici.Add("Djordjevic");
+
+    korisnici.Add("davitko.jpg");
+    korisnici.Add("davitkoMuzjak");
+    korisnici.Add("Milos");
+    korisnici.Add("Davitkovic");
+
+    korisnici.Add("damjan.jpg");
+    korisnici.Add("damjang86");
+    korisnici.Add("Damja");
+    korisnici.Add("Gicic");
+
+    korisnici.Add("paja.jpg");
+    korisnici.Add("paja92");
+    korisnici.Add("Pavle");
+    korisnici.Add("Djordjevic");
+
+    korisnici.Add("davitko.jpg");
+    korisnici.Add("davitkoMuzjak");
+    korisnici.Add("Milos");
+    korisnici.Add("Davitkovic");
+
+    korisnici.Add("damjan.jpg");
+    korisnici.Add("damjang86");
+    korisnici.Add("Damja");
+    korisnici.Add("Gicic");
+
+    korisnici.Add("paja.jpg");
+    korisnici.Add("paja92");
+    korisnici.Add("Pavle");
+    korisnici.Add("Djordjevic");
+
+    korisnici.Add("davitko.jpg");
+    korisnici.Add("davitkoMuzjak");
+    korisnici.Add("Milos");
+    korisnici.Add("Davitkovic");
 }
 <style>
     #KORISNICI_DIV img{
@@ -26,35 +71,23 @@
 <h2>Korisnici</h2>
 <br><br><br>
 <div id="KORISNICI_DIV">
-    <div class="row">
-        <div class="col-md-4">
-            <img src="~/Content/userImgs/damjan.jpg">
-            <br>
-            <label>Korisničko ime:</label>
-            <h5 class="brn btn-link" data-toggle="modal" data-target="#KORISNICI_MODAL" onclick="DetaljiKorisnika()">damjang86</h5>
-            <br>
-            <label>Puno ime:</label>
-            <h5>Damjan Gicic</h5>
+    @for (int i = 0, ine = korisnici.Count - 12; i < ine; i+=12 )
+    {
+        <div class="row">
+            @for(int j=0; j<12; j+=4)
+            {
+                <div class="col-md-4">
+                    <img src="/Content/userImgs/@korisnici.ElementAt(i+j+0)">
+                    <br>
+                    <label>Korisničko ime:</label>
+                    <h5 class="brn btn-link" data-toggle="modal" data-target="#KORISNICI_MODAL" onclick="DetaljiKorisnika('@korisnici.ElementAt(i+j+1)')">@korisnici.ElementAt(i + j + 1)</h5>
+                    <br>
+                    <label>Puno ime:</label>
+                    <h5>@korisnici.ElementAt(i + j + 2) @korisnici.ElementAt(i + j + 3)</h5>
+                </div>
+            }
         </div>
-        <div class="col-md-4">
-            <img src="~/Content/userImgs/paja.jpg">
-            <br>
-            <label>Korisničko ime:</label>
-            <h5>pajagoogle92</h5>
-            <br>
-            <label>Puno ime:</label>
-            <h5>Pavle Djordjevic</h5>
-        </div>
-        <div class="col-md-4">
-            <img src="~/Content/userImgs/davitko.jpg" />
-            <br>
-            <label>Korisničko ime:</label>
-            <h5>davitkoMuzjak</h5>
-            <br>
-            <label>Puno ime:</label>
-            <h5>Davitkovic Milos</h5>
-        </div>
-    </div>
+    }
 </div>
 
 <!-- Modal -->
@@ -66,101 +99,148 @@
                 <h4 class="modal-title">Korisnik: </h4>
             </div>
             <div class="modal-body">
-                <div class="row">
-                    <div class="col-md-4">
-                        <img src="~/Content/userImgs/damjan.jpg">
-                    </div>
-                    <div class="col-md-6">
-                        <div class="row">
-                            <div class="col-md-5">
-                                <label style="margin-top:10px">Ime:</label>
+                <form id="KORISNICI_FORM" name="KORISNICI_FORM" action="@Url.Action("SaveUserData", "Users")" method="post" enctype="multipart/form-data" target="KORISNICI_IFRAME">
+                    <iframe id="KORISNICI_IFRAME" name="KORISNICI_IFRAME" hidden></iframe>
+                    <div class="row">
+                        <div class="col-md-4">
+                            <img id="SLIKA_IMG" src="~/Content/userImgs/damjan.jpg">
+                        </div>
+                        <div class="col-md-6">
+                            <div class="row">
+                                <div class="col-md-5">
+                                    <label style="margin-top:10px">Ime:</label>
+                                </div>
+                                <div class="col-md-6">
+                                    <input id="IME" name="ime" placeholder="Vase ime" autofocus />
+                                </div>
                             </div>
-                            <div class="col-md-6">
-                                <input id="IME" name="ime" placeholder="Vase ime" autofocus/>
+                            <div class="row">
+                                <div class="col-md-5">
+                                    <label style="margin-top:10px">Prezime:</label>
+                                </div>
+                                <div class="col-md-6">
+                                    <input id="PREZIME" name="prezime" placeholder="Vase prezime" />
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-5">
+                                    <label style="margin-top:10px">Korisničko ime:</label>
+                                </div>
+                                <div class="col-md-6">
+                                    <input id="KORISNICKO" name="korisnickoIme" placeholder="Vase korisnicko ime" />
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-md-5">
+                                    <label style="margin-top:10px">Šifra</label>
+                                </div>
+                                <div class="col-md-6">
+                                    <input id="SIFRA" type="password" name="sifra" placeholder="Vasa šifra"/>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-md-5">
+                                    <label style="margin-top:10px">Ponovite šifru</label>
+                                </div>
+                                <div class="col-md-6">
+                                    <input id="PONOVLJENA_SIFRA" type="password" name="ponovljenaSifra" placeholder="Ponovo unesite šifru" />
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-md-5">
+                                    <label style="margin-top:10px">Vaša slika</label>
+                                </div>
+                                <div class="col-md-6">
+                                    <input id="SLIKA_INPUT" name="slika" type="file" />
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-md-5">
+
+                                </div>
+                                <div class="col-md-6">
+
+                                </div>
                             </div>
                         </div>
-                        <div class="row">
-                            <div class="col-md-5">
-                                <label style="margin-top:10px">Prezime:</label>
-                            </div>
-                            <div class="col-md-6">
-                                <input id="PREZIME" name="prezime" placeholder="Vase prezime" />
-                            </div>
+                        <div class="col-md-2">
                         </div>
-                        <div class="row">
-                            <div class="col-md-5">
-                                <label style="margin-top:10px">Korisničko ime:</label>
-                            </div>
-                            <div class="col-md-6">
-                                <input id="KORISNICKO" name="korisnickoIme" placeholder="Vase korisnicko ime" />
-                            </div>
-                        </div> 
-                        
-                        <div class="row">
-                            <div class="col-md-5">
-                                <label style="margin-top:10px">Šifra</label>
-                            </div>
-                            <div class="col-md-6">
-                                <input id="SIFRA" name="sifra" placeholder="Vasa šifra" />
-                            </div>
-                        </div> 
-                        
-                        <div class="row">
-                            <div class="col-md-5">
-                                <label style="margin-top:10px">Ponovite šifru</label>
-                            </div>
-                            <div class="col-md-6">
-                                <input id="PONOVLJENA_SIFRA" name="ponovljenaSifra" placeholder="Ponovo unesite šifru" />
-                            </div>
-                        </div> 
-                        
-                        <div class="row">
-                            <div class="col-md-5">
-                                <label style="margin-top:10px">Vaša slika</label>
-                            </div>
-                            <div class="col-md-6">
-                                <input id="SLIKA" name="slika" type="file" />
-                            </div>
-                        </div> 
-                        
-                        <div class="row">
-                            <div class="col-md-5">
-
-                            </div>
-                            <div class="col-md-6">
-
-                            </div>
-                        </div>                                   
                     </div>
-                    <div class="col-md-2">
-                    </div>
-                </div>
-            </div>            
+                </form>            
+            </div>
             <div class="modal-footer">
                 <button id="nazadModalBtn" type="button" class="btn btn-default" data-dismiss="modal" style="float:left">Nazad</button>
                 @if (true)
                 {
-                    <button id="doneButton" type="button" class="btn btn-primary" onclick="done()" style="float:right">Unesi</button>
+                    <button id="doneButton" type="button" class="btn btn-primary" onclick="UnesiKorisnika()" style="float:right">Unesi</button>
                 }
                 else
                 {
                     <button id="doneButton" style="display:none"></button>
                 }
             </div>
-         </div>
-     </div>
+        </div>
+    </div>
 </div>
 
 @section Scripts
 {
     <script type="text/javascript">
-        $(function()
-        {
-            $('#KORISNICI_DIV img').click(DetaljiKorisnika());
-        });
-        function DetaljiKorisnika()
-        {
+    $(function () {
+        $('#KORISNICI_DIV img').click(DetaljiKorisnika());
+    });
 
+    function DetaljiKorisnika(userName) {
+        $.ajax({
+            type: 'POST',
+            url: '@Url.Action("GetUserData", "Users")',
+                data: { userName: userName },
+                success: function (data) {
+                    data = JSON.parse(data);
+                    if (data[0] == "done") {
+                        $('SLIKA_IMG').val();
+                        $('IME').val();
+                        $('KORISNICKO').val();
+                    }
+                    else {
+                        alert(data);
+                    }
+                }
+            });
         }
+
+        function UnesiKorisnika()
+        {
+            if (!confirm("Zelite da unesete trenutne podatke?"))
+            {
+                return;
+            }
+            if ($('SIFRA').val() != $('PONOVLJENA_SIFRA').val())
+            {
+                alert("Šifre se ne podudaraju!");
+                return;
+            }
+
+            var callback = function () {
+                var infoText = $('#KORISNICI_IFRAME').contents().find('body').text();
+                infoText = JSON.parse(infoText);
+                if (infoText == 'done') {
+                    //on success                  
+                }
+                else {
+                    //on error
+                    alert("Greska");
+                }
+                $('#KORISNICI_IFRAME').unbind('load', callback);
+            };
+
+            $('#KORISNICI_IFRAME').bind('load', callback);
+            $('#KORISNICI_FORM').submit();
+        }
+
     </script>
 }

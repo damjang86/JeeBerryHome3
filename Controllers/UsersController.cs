@@ -23,12 +23,11 @@ namespace JeeBerryHome3.Controllers
         {
             //sliku moras ovde, samo da ti prekopitam kod
             //sad mozes sve sem slike
-
         }
 
         public void SaveUserData(String ime, String prezime, String korisnickoIme, String sifra, String slikaUrl)
         {
-            User
+            
         }
     }
 }
