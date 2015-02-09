@@ -45,3 +45,6 @@ Temporary Items
 /obj/Debug/*
 *.suo
 
+*.dll
+*.cache
+*.cache
